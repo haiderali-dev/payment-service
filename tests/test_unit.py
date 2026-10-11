@@ -64,3 +64,12 @@ def test_non_positive_amount_is_rejected(amount: int) -> None:
 
     with pytest.raises(ValueError, match="must be positive"):
         create_payment(amount)
+
+
+# Intentional failure for the demo/failing-tests branch ONLY. Never merge into main.
+#
+# BUILD_PROMPT Phase 5 acceptance: "against demo/failing-tests the freestyle deploy job never
+# starts". It lives in this file because scripts/test.sh runs only tests/test_unit.py for the unit
+# suite; a separate file would never execute and the branch would wrongly pass.
+def test_demo_failing_tests_fails_on_purpose() -> None:
+    assert 1 + 1 == 3, "intentional failure: the deploy job must never start after this"
