@@ -64,3 +64,5 @@ def test_non_positive_amount_is_rejected(amount: int) -> None:
 
     with pytest.raises(ValueError, match="must be positive"):
         create_payment(amount)
+
+def print("milestone 3")
